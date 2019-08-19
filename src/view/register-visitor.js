@@ -9,10 +9,11 @@ export default () => {
   </header>
   
   <form class="register-visitor">
-    <input type="text" id="name" placeholder="Nombre completo" autocomplete="on"/>
-    <input type="mail" id="email" placeholder="Correo electrónico" autocomplete="on"/>
-    <input type="text" id="company" placeholder="Compañía" autocomplete="on"/>
-    <input type="text" id="host" placeholder="Host" autocomplete="on"/>
+    <input type="text" id="name" placeholder="Nombre completo" autocomplete="on" required>
+    <input type="mail" id="email" placeholder="Correo electrónico" autocomplete="on" required>
+    <input type="text" id="company" placeholder="Compañía" autocomplete="on" required>
+    <input type="text" required id="host" placeholder="Host" autocomplete="on">
+    <p>Acompañantes: </p> <button>+</button><button>-</button>
     <button id="register-btn">Registrarse</button>
   </form>
   
@@ -26,7 +27,10 @@ export default () => {
 
 
   const registerBtn = createChildNode.querySelector('#register-btn');
-  registerBtn.addEventListener('click', register)
+  registerBtn.addEventListener('click', (event) => {
+    event.preventDefault()
+    register()
+  })
 
   return createChildNode;
 }
