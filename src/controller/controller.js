@@ -9,18 +9,17 @@ export const register = () => {
   const company = document.getElementById('company').value;
   const host = document.getElementById('host').value;
   
-  console.log(name, email, company, host);
-  
-  
-  
-  // dataBase(name, email, company, host);
-  console.log(dataBase(name, email, company, host))
+  dataBase(name, email, company, host)
+  .then(() => {
+    console.log('Registrado')
+    // función para cambiar hash
+  })
 }
 
 
-export const dataBase = (uid, name, email, company, host) => {
-  return firebase.firestore().collection("users").doc(uid).set({
-    idUser: uid,
+export const dataBase = (name, email, company, host) => {
+  return firebase.firestore().collection("users").add({
+    // idUser: uid,
     Nombre : name,
     Email : email,
     Company: company,
