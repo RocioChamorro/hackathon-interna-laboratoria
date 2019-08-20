@@ -1,3 +1,4 @@
+import {changeHash} from '../view-controller/route.js'
 // export const NewUsers = (email, password) => {
 //   return firebase.auth().createUserWithEmailAndPassword(email, password)
 //  };
@@ -14,6 +15,7 @@ export const register = () => {
   dataBase(name, email, identity, company, host, cant)
   .then(() => {
     console.log('Registrado')
+    changeHash('#/photo')
     // función para cambiar hash
   })
 }
