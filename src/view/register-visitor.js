@@ -15,7 +15,7 @@ export default () => {
     <input type="text" required id="host" placeholder="Host" autocomplete="on">
     <p>Acompañantes: <button id="mas">+</button>
     <button id="menos">-</button>
-    <p id="demo"></p>
+    <p id="cant"></p>
     <button id="register-btn">Registrarse</button>
   </form>
   
@@ -27,13 +27,15 @@ export default () => {
   const aumenta = createChildNode.querySelector("#mas");
   aumenta.addEventListener('click', () => {
     a = a + 1;
-    document.getElementById("demo").textContent = a;
+    document.getElementById("cant").textContent = a;
+    console.log(a)
   })
 
   const disminuye = createChildNode.querySelector("#menos");
   disminuye.addEventListener('click', () => {
     a = a - 1;
-    document.getElementById("demo").textContent = a;
+    document.getElementById("cant").textContent = a;
+    console.log(a)
   })
 
   const registerBtn = createChildNode.querySelector('#register-btn');
