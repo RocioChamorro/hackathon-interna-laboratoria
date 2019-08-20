@@ -1,4 +1,6 @@
 import { components } from "../view-controller/index.js";
+import {capturePhoto} from "../view-controller/controllerPhoto.js";
+import {getsessionStorage} from "../view-controller/controlerProfile.js"
 
 export const changeHash = (hash) => {
   window.location.hash = hash;
@@ -9,8 +11,15 @@ export const changeTmp = (hash) => {
     return changeView('#/home');
   } else if (hash === '#/home'||hash === '#/register' ) {
     return changeView(hash);
-  } else {
-    return changeView('#/perfil');
+  } 
+  else if (hash === '#/photo') {
+  return changeView(hash);
+  }
+  else if (hash === '#/profile') {
+    return changeView(hash);
+    }
+  else {
+    return changeView('#/profile');
   }
 }
 
@@ -22,6 +31,19 @@ export const changeView = (route) => {
     break;
      case '#/register': main.appendChild(components.register())
      break;
+     case '#/photo': {main.appendChild(components.photo());
+      capturePhoto();
+    
+   
+
+     break;
+    }
+    case '#/profile': {main.appendChild(components.profile());
+      getsessionStorage();
+   
+
+     break;
+    }
     //  case '#/perfil':
     //   const callback = (data) => {
     //     main.innerHTML = '';
