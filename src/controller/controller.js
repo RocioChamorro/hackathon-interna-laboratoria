@@ -23,7 +23,9 @@ export const dataBase = (name, email, company, host) => {
     Nombre : name,
     Email : email,
     Company: company,
-    Host: host
+    Host: host,
+    createdAt: firebase.firestore.FieldValue.serverTimestamp()
     // photo: userPhoto
   });
 }
+
