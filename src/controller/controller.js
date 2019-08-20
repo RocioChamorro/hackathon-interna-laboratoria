@@ -9,8 +9,9 @@ export const register = () => {
   const identity = document.getElementById('identity').value;
   const company = document.getElementById('company').value;
   const host = document.getElementById('host').value;
+  const cant = document.getElementById('cant').textContent;
   
-  dataBase(name, email, identity, company, host)
+  dataBase(name, email, identity, company, host, cant)
   .then(() => {
     console.log('Registrado')
     // función para cambiar hash
@@ -18,7 +19,9 @@ export const register = () => {
 }
 
 
-export const dataBase = (name, email, identity, company, host) => {
+
+export const dataBase = (name, email, identity, company, host, cant) => {
+
   return firebase.firestore().collection("users").add({
     // idUser: uid,
     Nombre : name,
@@ -26,8 +29,11 @@ export const dataBase = (name, email, identity, company, host) => {
     Documento: identity,
     Company: company,
     Host: host,
+    Acompañante: cant,
     createdAt: firebase.firestore.FieldValue.serverTimestamp()
     // photo: userPhoto
   });
 }
+
+
 
