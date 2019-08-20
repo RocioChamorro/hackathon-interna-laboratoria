@@ -28,13 +28,28 @@ export const changeView = (route) => {
   main.innerHTML = '';
   switch (route) {
     case '#/home':  main.appendChild(components.home())
-    break;
-     case '#/register': main.appendChild(components.register())
-     break;
-     case '#/photo': {main.appendChild(components.photo());
+      break;
+    case '#/register': {console.log(main.appendChild(components.register()));
+      const autocompleteHost = () => {
+        console.log('register')
+        const options = {
+          data: {
+            'Gonzalo': null,
+            'Alejandra Ramirez': null,
+            'Vania': null,
+            'Rocío': null
+          },
+          minLength: 4
+        }
+        const elems = document.querySelectorAll('.autocomplete');
+        const instances = M.Autocomplete.init(elems, options);
+      };
+
+      autocompleteHost();
+      break;
+    }
+    case '#/photo': {main.appendChild(components.photo());
       capturePhoto();
-    
-   
 
      break;
     }

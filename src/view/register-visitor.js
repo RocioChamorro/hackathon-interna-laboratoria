@@ -46,6 +46,7 @@ export default () => {
     <button id="menos">-</button>
     <p id="cant"></p>
     <button id="register-btn">Registrarse</button>
+    <a class="waves-effect waves-light btn" href="#/photo">Siguiente</a>
   </div>
   `;
   createChildNode.innerHTML = content;
@@ -66,25 +67,27 @@ export default () => {
     console.log(a)
   })
 
-  const registerBtn = createChildNode.querySelector('#register-btn');
-  registerBtn.addEventListener('click', (event) => {
-    event.preventDefault()
-    register()
-  })
+  // const registerBtn = createChildNode.querySelector('#register-btn');
+  // registerBtn.addEventListener('click', (event) => {
+  //   event.preventDefault()
+  //   register()
+  // })
 
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const options = {
-      data: {
-        'Gonzalo': null,
-        'Alejandra Ramirez': null,
-        'Vania': null
-      },
-      minLength: 4
-    }
-    const elems = document.querySelectorAll('.autocomplete');
-    const instances = M.Autocomplete.init(elems, options);
-  });
+  
 
   return createChildNode;
 }
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   const options = {
+//     data: {
+//       'Gonzalo': null,
+//       'Alejandra Ramirez': null,
+//       'Vania': null
+//     },
+//     minLength: 4
+//   }
+//   const elems = document.querySelectorAll('.autocomplete');
+//   const instances = M.Autocomplete.init(elems, options);
+// });
