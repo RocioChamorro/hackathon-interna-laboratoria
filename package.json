@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/frankynztein/hackathon-interna-laboratoria/issues"
   },
-  "homepage": "https://github.com/frankynztein/hackathon-interna-laboratoria#readme"
+  "homepage": "https://github.com/frankynztein/hackathon-interna-laboratoria#readme",
+  "dependencies": {
+    "materialize-css": "^1.0.0-rc.2"
+  }
 }

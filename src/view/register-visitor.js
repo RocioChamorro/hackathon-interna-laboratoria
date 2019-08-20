@@ -7,26 +7,82 @@ export default () => {
   `<header>
     <p>Logo</p>
   </header>
-  
-  <form class="register-visitor">
-    <input type="text" id="name" placeholder="Nombre completo" autocomplete="on"/>
-    <input type="mail" id="email" placeholder="Correo electrónico" autocomplete="on"/>
-    <input type="text" id="company" placeholder="Compañía" autocomplete="on"/>
-    <input type="text" id="host" placeholder="Host" autocomplete="on"/>
+
+  <div class="row">
+    <form class="col s12 register-visitor">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="name" type="text">
+          <label for="name">Nombre completo</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="email" type="email" class="validate">
+          <label for="email">Correo electrónico</label>
+          <span class="helper-text" data-error="Correo inválido" data-success="Correo válido"></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="identity" type="text">
+          <label for="identity">Documento de Identidad</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="company" type="text">
+          <label for="company">Compañía</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input type="text" id="host" class="autocomplete">
+          <label for="host">Host</label>
+        </div>
+      </div>
+    </form>
+    <p>Acompañantes: <button id="mas">+</button>
+    <button id="menos">-</button>
+    <p id="demo"></p>
     <button id="register-btn">Registrarse</button>
-  </form>
-  
+  </div>
   `;
   createChildNode.innerHTML = content;
 
 
+  let a = 0;
+  const aumenta = createChildNode.querySelector("#mas");
+  aumenta.addEventListener('click', () => {
+    a = a + 1;
+    document.getElementById("demo").textContent = a;
+  })
 
-
-
-
+  const disminuye = createChildNode.querySelector("#menos");
+  disminuye.addEventListener('click', () => {
+    a = a - 1;
+    document.getElementById("demo").textContent = a;
+  })
 
   const registerBtn = createChildNode.querySelector('#register-btn');
-  registerBtn.addEventListener('click', register)
+  registerBtn.addEventListener('click', (event) => {
+    event.preventDefault()
+    register()
+  })
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const options = {
+      data: {
+        'Gonzalo': null,
+        'Alejandra Ramirez': null,
+        'Vania': null
+      },
+      minLength: 4
+    }
+    const elems = document.querySelectorAll('.autocomplete');
+    const instances = M.Autocomplete.init(elems, options);
+  });
 
   return createChildNode;
 }
