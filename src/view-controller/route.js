@@ -37,7 +37,7 @@ export const changeView = (route) => {
             'Gonzalo': null,
             'Alejandra Ramirez': null,
             'Vania': null,
-            'Rocío': null
+            'Rocio': null
           },
           minLength: 4
         }
