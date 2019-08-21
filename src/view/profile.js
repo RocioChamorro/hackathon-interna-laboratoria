@@ -26,14 +26,14 @@ export default () => {
         <p>2. Respetar a todas las personas</p>
       </div>
       <div class="card-action">
-        <button>OK</button>
+      <button id='register' type='button'>Aceptar</button>
       </div>
     </div>
   </div>
 </div>
     `;
     createChildNode.innerHTML=content;
-
+    
     const objInf= JSON.parse(sessionStorage.getItem('objInf'));
     console.log(objInf.Nombre)
 
@@ -42,7 +42,7 @@ export default () => {
     `${objInf.Nombre}</br>
      ${objInf.Company}</br>
      ${objInf.Host} `;
-    
+ 
 
     return createChildNode;
 }

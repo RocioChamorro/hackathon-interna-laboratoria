@@ -1,4 +1,6 @@
 import { databaseRegister} from '../firestore.js'
+import { changeHash } from './route.js'
+
 const drawDataURIOnCanvas=(strDataURI, context)=> {
     "use strict";
     var img = new window.Image();
@@ -19,22 +21,22 @@ export const getsessionStorage=()=>{
 
 export const submitFirebase = () => {
     const objInf= JSON.parse(sessionStorage.getItem('objInf'));
-    console.log(objInf);
     const toDrawUrl = sessionStorage.getItem('url');
-    console.log(toDrawUrl)
     const submit= document.getElementById('register');
     submit.addEventListener('click', () => {
         const obj = {
             Nombre: objInf.Nombre,
             Email: objInf.Email,
-            Documento: objInf.Document,
+            Documento: objInf.Documento,
             Company: objInf.Company,
             Host: objInf.Host,
-            CreatedAt: objInf.createdAt,
+            CreatedAt: firebase.firestore.FieldValue.serverTimestamp(),
             photo: toDrawUrl
         }
         console.log(obj)
         databaseRegister(obj);
+        changeHash('#/home')
     }) 
 
 }
+//
