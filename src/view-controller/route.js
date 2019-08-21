@@ -2,7 +2,7 @@ import { components } from "../view-controller/index.js";
 import { capturePhoto } from "../view-controller/controllerPhoto.js";
 import { getsessionStorage, submitFirebase } from "../view-controller/controlerProfile.js"
 import { readData } from "../firestore.js"
-import { readRegister } from "../view-controller/controlerAdmi.js"
+import { readRegister, filterValueBtn } from "../view-controller/controlerAdmi.js"
 
 export const changeHash = (hash) => {
   window.location.hash = hash;
@@ -24,6 +24,7 @@ export const changeTmp = (hash) => {
     return changeView(hash);
   }
   else if (hash === '#/admin') {
+    
     return changeView(hash);
   }
   else {
@@ -98,9 +99,11 @@ export const changeView = (route) => {
     }
     case '#/admin': {
       main.appendChild(components.admin());
-      readData('users', 'createdAt', (query) => {
+      readData('users', 'CreatedAt', (query) => {
         readRegister(query);
       })
+      filterValueBtn()
+
       break;
     }
     //  case '#/perfil':
