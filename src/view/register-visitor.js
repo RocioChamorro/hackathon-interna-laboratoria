@@ -1,5 +1,5 @@
-import { register, dataBase } from "../controller/controller.js";
-// import { dataVisitors } from "../controller/controller.js";
+import { register } from "../controller/controller.js";
+import { changeHash } from "../view-controller/route.js";
 // import { changeHash } from "../view-controller/route.js";
 
 export default () => {
@@ -54,8 +54,7 @@ export default () => {
     <p>Acompañantes: <button id="mas">+</button>
     <button id="menos">-</button>
     <p id="cant"></p>
-    <button id="register-btn">Registrarse</button>
-    <a class="waves-effect waves-light btn" href="#/photo">Siguiente</a>
+    <button class="waves-effect waves-light btn" id="register-btn">Registrarse</button>
   </div>
   `;
   createChildNode.innerHTML = content;
@@ -77,9 +76,9 @@ export default () => {
   })
 
   const registerBtn = createChildNode.querySelector('#register-btn');
-  registerBtn.addEventListener('click', (event) => {
-    event.preventDefault()
+  registerBtn.addEventListener('click', () => {
     register()
+    changeHash('#/photo')
   })
   
   const dataVisitors = {

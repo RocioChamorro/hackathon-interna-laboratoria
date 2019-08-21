@@ -7,7 +7,7 @@ export default () => {
     <img class="logo-home" src="./assets/Logo-Comunal.svg"/>
     <div class="btn-home">
       <a id="sign-in"><img src="./assets/visitante-btn.jpeg" class="visitante-btn"></a>
-      <a id=""><img src="./assets/admin-btn.jpeg" class="admin-btn"></a>
+      <a id="administrador"><img src="./assets/admin-btn.jpeg" class="admin-btn"></a>
     </div>
     
   </div>
@@ -18,6 +18,11 @@ export default () => {
   signIn.addEventListener('click', () => {
     changeHash("#/register");
   })
+  const administrador = createChildNode.querySelector('#administrador');
+  administrador.addEventListener('click', () => {
+    changeHash("#/admin");
+  })
+
 
   return createChildNode;
 }
