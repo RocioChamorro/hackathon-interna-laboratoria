@@ -6,8 +6,8 @@ export default () => {
   `<div class="container-home">
     <img class="logo-home" src="./assets/Logo-Comunal.svg"/>
     <div class="btn-home">
-      <a id="sign-in"><img src="./assets/visitante-btn.jpeg" class="visitante-btn"></a>
-      <a id="administrador"><img src="./assets/admin-btn.jpeg" class="admin-btn"></a>
+      <a id="sign-in" class="visitante-btn"><img src="./assets/visitante-btn.jpeg" class="visitante-img"></a>
+      <a id="administrador" class="admin-btn"><img src="./assets/admin-btn.jpeg" class="admin-img"></a>
     </div>
     
   </div>

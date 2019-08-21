@@ -1,4 +1,4 @@
-@media (min-width: 1536px) {
+@media (min-width: 768px) {
   body {
     margin: auto 0;
     background-color: #F0F0F0;
@@ -6,8 +6,12 @@
   
   select {
     display: inline-block;
-    width: 10%;
+    width: 120%;
   }
+
+  /* input {
+    border: 1px solid black !important
+  } */
 
   .container-home {
     display: flex;
@@ -23,8 +27,8 @@
     align-self: center;
     /* margin: auto; */
     width: 80%;
-    padding-right: 10%;
-    margin-top: 3%;
+    /* padding-right: 10%; */
+    /* margin-top: 3%; */
   }
 
   .btn-home {
@@ -32,17 +36,82 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
-    align-content: center;
-    /* align-items: center; */
-    /* width: 50%; */
+    margin-top: 5%;
   }
 
   .visitante-btn, .admin-btn {
-    width: 60%;
+    margin-right: 5%;
   }
-   .visitante-btn {
-     margin-left: 17%;
-   }
+
+  .visitante-img, .admin-img {
+    width: 80%;
+    margin-left: 15%;
+    
+  }
+
+  /* REGISTER SECTION */
+  .stepper-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 5%;
+  }
+
+  .stepper1-img {
+    width: 50%;
+  }
+
+  .visitor-header {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 1%;
+  }
+
+  .container-register {
+    background-color: white;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    margin-top: 3%;
+    margin-left: 12%;
+    width: 586px;
+    height: 840px;
+    padding: 5%;
+    
+  }
+
+  /* .container-form {
+    width: 100%;
+  } */
+
+  .register-visitor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 100%; */
+  }
+
+
+
+  .row {
+    align-items: center;
+  }
+
+  .plus-one {
+    display: inline;
+  }
+
+  .plus-one-number {
+    font-weight: bold;
+  }
+
+  .sum-btn, .minus-btn {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .sum-btn, .minus-btn {
+    background-color: #FFD100;
+  }
 
   
 

@@ -5,56 +5,61 @@ import { changeHash } from "../view-controller/route.js";
 export default () => {
   const createChildNode = document.createElement('div');
   const content = 
-  `<header>
-    <p>Logo</p>
-  </header>
+  `
+  <div class="stepper-img">
+    <img class="stepper1-img" src="./assets/stepper1.jpeg"/>
+  </div>
+  <div class="container-register">
+    <p class="visitor-header">VISITANTE</p>
+    <div class="row container-form">
+      <form class="col s12 register-visitor">
+        <div class="row">
+          <select id="identification">
+            <option value="dni">DNI</option>
+            <option value="ce">CE</option>
+            <option value="pas">PAS</option>
+            <option value="ptp">PTP</option>
+          </select>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="identity" type="text" autocomplete="off">
+            <label for="identity">Documento de Identidad</label>
+          </div>
+        </div>
 
-  <div class="row register-visitor">
-    <form class="col s12 register-visitor">
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="name" type="text" autocomplete="off">
-          <label for="name" id="name-label">Nombre completo</label>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="name" type="text" autocomplete="off">
+            <label for="name" id="name-label">Nombre completo</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="email" type="email" class="validate" autocomplete="off">
-          <label for="email" id="email-label">Correo electrónico</label>
-          <span class="helper-text" data-error="Correo inválido" data-success="Correo válido"></span>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email" type="email" class="validate" autocomplete="off">
+            <label for="email" id="email-label">Correo electrónico</label>
+            <span class="helper-text" data-error="Correo inválido" data-success="Correo válido"></span>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <select id="identification">
-          <option value="dni">DNI</option>
-          <option value="ce">CE</option>
-          <option value="pas">PAS</option>
-          <option value="ptp">PTP</option>
-        </select>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="identity" type="text" autocomplete="off">
-          <label for="identity">Documento de Identidad</label>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="company" type="text" autocomplete="off">
+            <label for="company">Compañía</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="company" type="text" autocomplete="off">
-          <label for="company">Compañía</label>
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" id="host" class="autocomplete" autocomplete="off">
+            <label for="host">Host</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input type="text" id="host" class="autocomplete" autocomplete="off">
-          <label for="host">Host</label>
-        </div>
-      </div>
-    </form>
-    <p>Acompañantes: <button id="mas">+</button>
-    <button id="menos">-</button>
-    <p id="cant"></p>
-    <button class="waves-effect waves-light btn" id="register-btn">Registrarse</button>
+      </form>
+      <p class="plus-one">Añadir un acompañante: <span id="cant" class="plus-one-number"></span></p>
+      <a id="mas" class="btn-floating btn-small waves-effect waves-light sum-btn"><i class="material-icons">+</i></a>
+      <a id="menos" class="btn-floating btn-small waves-effect waves-light minus-btn"><i class="material-icons">-</i></a>
+      <button class="waves-effect waves-light btn" id="register-btn">Registrarse</button>
+    </div>
   </div>
   `;
   createChildNode.innerHTML = content;
