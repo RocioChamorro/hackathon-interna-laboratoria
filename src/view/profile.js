@@ -1,5 +1,3 @@
-import { changeHash } from "../view-controller/route.js";
-
 export default () => {
     const createChildNode = document.createElement('div')
     createChildNode.setAttribute('id', 'containerProfile' )
