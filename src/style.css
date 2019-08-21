@@ -1,8 +1,48 @@
-body {
-  padding: 3%;
-}
+@media (min-width: 1536px) {
+  body {
+    margin: auto 0;
+    background-color: #F0F0F0;
+  }
+  
+  select {
+    display: inline-block;
+    width: 10%;
+  }
 
-select {
-  display: inline-block;
-  width: 10%;
+  .container-home {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    /* width: 50%; */
+  }
+
+  .logo-home {
+    align-self: center;
+    /* margin: auto; */
+    width: 80%;
+    padding-right: 10%;
+  }
+
+  .btn-home {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    /* align-items: center; */
+    /* width: 50%; */
+  }
+
+  .visitante-btn, .admin-btn {
+    width: 60%;
+  }
+   .visitante-btn {
+     margin-left: 17%;
+   }
+
+  
+
 }
