@@ -6,7 +6,7 @@ const editObj = (property, value, id) => {
     objPost[property] = value
     editFirestore(id, objPost);
 }
-
+//
 export const readRegister = (query) => {
     const containerRegister = document.querySelector('#containerRegister');
     if (containerRegister) {
