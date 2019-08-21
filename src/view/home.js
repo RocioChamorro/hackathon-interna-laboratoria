@@ -3,7 +3,9 @@ import { changeHash } from "../view-controller/route.js";
 export default () => {
   const createChildNode = document.createElement('div');
   const content = 
-  `<button id="sign-in">Sign In</button>
+  `
+  <button id="sign-in">Visitante</button>
+  <button id="administrador">Administrador</button>
   `;
   createChildNode.innerHTML = content;
 
@@ -11,6 +13,11 @@ export default () => {
   signIn.addEventListener('click', () => {
     changeHash("#/register");
   })
+  const administrador = createChildNode.querySelector('#administrador');
+  administrador.addEventListener('click', () => {
+    changeHash("#/admin");
+  })
+
 
   return createChildNode;
 }

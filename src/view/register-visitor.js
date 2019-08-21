@@ -54,8 +54,7 @@ export default () => {
     <p>Acompañantes: <button id="mas">+</button>
     <button id="menos">-</button>
     <p id="cant"></p>
-    <button id="register-btn">Registrarse</button>
-    <a class="waves-effect waves-light btn" href="#/photo">Siguiente</a>
+    <button class="waves-effect waves-light btn" id="register-btn">Registrarse</button>
   </div>
   `;
   createChildNode.innerHTML = content;

@@ -1,8 +1,8 @@
 import { components } from "../view-controller/index.js";
-import {capturePhoto} from "../view-controller/controllerPhoto.js";
-import {getsessionStorage, submitFirebase} from "../view-controller/controlerProfile.js"
-import {readData} from "../firestore.js"
-import {readRegister} from "../view-controller/controlerAdmi.js"
+import { capturePhoto } from "../view-controller/controllerPhoto.js";
+import { getsessionStorage, submitFirebase } from "../view-controller/controlerProfile.js"
+import { readData } from "../firestore.js"
+import { readRegister } from "../view-controller/controlerAdmi.js"
 
 export const changeHash = (hash) => {
   window.location.hash = hash;
@@ -11,18 +11,21 @@ export const changeHash = (hash) => {
 export const changeTmp = (hash) => {
   if (hash === '#/' || hash === '' || hash === '#') {
     return changeView('#/home');
-  } else if (hash === '#/home'||hash === '#/register' ) {
+  } else if (hash === '#/home' || hash === '#/register') {
     return changeView(hash);
-  } 
+  }
   else if (hash === '#/photo') {
-  return changeView(hash);
+    return changeView(hash);
   }
   else if (hash === '#/profile') {
     return changeView(hash);
-    }
+  }
+  else if (hash === '#/loginAdmin') {
+    return changeView(hash);
+  }
   else if (hash === '#/admin') {
-      return changeView(hash);
-      }
+    return changeView(hash);
+  }
   else {
     return changeView('#/home');
   }
@@ -32,9 +35,10 @@ export const changeView = (route) => {
   const main = document.getElementById("main");
   main.innerHTML = '';
   switch (route) {
-    case '#/home':  main.appendChild(components.home())
-    break;
-    case '#/register': {main.appendChild(components.register());
+    case '#/home': main.appendChild(components.home())
+      break;
+    case '#/register': {
+      main.appendChild(components.register());
       const autocompleteHost = () => {
         const options = {
           data: {
@@ -58,7 +62,7 @@ export const changeView = (route) => {
       // const email = document.getElementById('email')
       // const identification = document.getElementById('identification')
       // const identityNumber = document.getElementById('identity')
-    
+
       // const changeValueDocument = document.querySelector('#identity');
       // changeValueDocument.addEventListener('change', (event) => {
       //   event.preventDefault()
@@ -75,21 +79,29 @@ export const changeView = (route) => {
       autocompleteHost();
       break;
     }
-    case '#/photo': {main.appendChild(components.photo());
+    case '#/photo': {
+      main.appendChild(components.photo());
       capturePhoto();
 
-     break;
+      break;
     }
-    case '#/profile': {main.appendChild(components.profile());
+    case '#/profile': {
+      main.appendChild(components.profile());
       getsessionStorage();
       submitFirebase();
-     break;
+      break;
     }
-    case '#/admin': {main.appendChild(components.admin());
+    case '#/loginAdmin': {
+      main.appendChild(components.loginAdmin());
+
+      break;
+    }
+    case '#/admin': {
+      main.appendChild(components.admin());
       readData('users', 'createdAt', (query) => {
         readRegister(query);
-    })
-     break;
+      })
+      break;
     }
     //  case '#/perfil':
     //   const callback = (data) => {
@@ -100,7 +112,7 @@ export const changeView = (route) => {
     //   getPost(callback)
     //  break;
     default:
-        break;
+      break;
   }
 }
 
