@@ -7,7 +7,7 @@ export default () => {
   const content = 
   `
   <div class="stepper-img">
-    <img class="stepper1-img" src="./assets/stepper1.jpeg"/>
+    <img class="stepper1-img" src="./assets/stepper11.jpeg"/>
   </div>
   <div class="container-register">
     <p class="visitor-header">VISITANTE</p>
@@ -87,9 +87,9 @@ export default () => {
   })
   
   const dataVisitors = {
-    Nombre : 'Franciree Arellan',
-    Email : 'arellan@gmail.com',
-    TipoDocumento: 'ptp',
+    Nombre : 'Gaby Moreno',
+    Email : 'gaby@gmail.com',
+    TipoDocumento: 'ce',
     Documento: '123'
   }
   
