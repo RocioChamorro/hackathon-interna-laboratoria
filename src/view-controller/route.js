@@ -43,9 +43,9 @@ export const changeView = (route) => {
       const autocompleteHost = () => {
         const options = {
           data: {
-            'Gonzalo Garcia - Laboratoria': null,
-            'Alejandra Rodriguez - Artes Escénicas': null,
-            'Rocio Chamorro - Comunal': null
+            'Gonzalo Parra': null,
+            'Alejandra Rodriguez': null,
+            'Rocio Chamorro': null
           },
           minLength: 4
         }
