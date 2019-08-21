@@ -1,4 +1,5 @@
 import { register } from "../controller/controller.js";
+import { changeHash } from "../view-controller/route.js";
 // import { changeHash } from "../view-controller/route.js";
 
 export default () => {
@@ -65,9 +66,9 @@ export default () => {
   })
 
   const registerBtn = createChildNode.querySelector('#register-btn');
-  registerBtn.addEventListener('click', (event) => {
-    event.preventDefault()
+  registerBtn.addEventListener('click', () => {
     register()
+    changeHash('#/photo')
   })
 
 
