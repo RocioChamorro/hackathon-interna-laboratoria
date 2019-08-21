@@ -37,12 +37,11 @@ export const submitFirebase = () => {
             Company: objInf.Company,
             Host: objInf.Host,
             CreatedAt: firebase.firestore.FieldValue.serverTimestamp(),
-            photo: '',/* toDrawUrl */
+            photo: toDrawUrl,
             estado: 'on',
             fechaInicial: `${fecha.toLocaleDateString("es-ES", options)}`,
             fechaSalida: ''
         }
-        console.log(obj)
         databaseRegister(obj);
         changeHash('#/home')
     }) 
