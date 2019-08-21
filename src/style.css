@@ -1,4 +1,9 @@
 @media (min-width: 768px) {
+
+  html {
+    font-family: 'Roboto', sans-serif;
+
+  }
   body {
     margin: auto 0;
     background-color: #F0F0F0;
@@ -6,7 +11,7 @@
   
   select {
     display: inline-block;
-    width: 120%;
+    width: 100%;
   }
 
   /* input {
@@ -88,6 +93,7 @@
     flex-direction: column;
     align-items: center;
     /* width: 100%; */
+    margin-bottom: 5%;
   }
 
 
@@ -98,10 +104,13 @@
 
   .plus-one {
     display: inline;
+    margin-right: 5%;
+    margin-left: 4%;
   }
 
   .plus-one-number {
     font-weight: bold;
+    margin-left: 3%;
   }
 
   .sum-btn, .minus-btn {
@@ -111,7 +120,28 @@
 
   .sum-btn, .minus-btn {
     background-color: #FFD100;
+    
   }
+
+  .sum-btn:active{ 
+    background-color: #000
+  }
+
+  .next-btn-home {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 15%;
+  }
+
+  .next-home-btn {
+    display: block;
+    margin-top: 5%;
+    width: 40%;
+    background-color: black;
+    
+  }
+
+
 
   
 
