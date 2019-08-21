@@ -2,7 +2,8 @@
 export const register = () => {
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
-  const identity = document.getElementById('identity').value;
+  const identification = document.getElementById('identification').value;
+  const identityNumber = document.getElementById('identity').value;
   const company = document.getElementById('company').value;
   const host = document.getElementById('host').value;
 
