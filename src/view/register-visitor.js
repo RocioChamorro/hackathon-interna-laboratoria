@@ -56,7 +56,7 @@ export default () => {
       <p class="plus-one">Añadir acompañante:<span id="cant" class="plus-one-number">0</span></p>
       <button id="mas" class="btn-floating btn-small waves-effect waves-light sum-btn">+</button>
       <div class="next-btn-home">
-        <button class="waves-effect waves-light btn register-btn" id="next-home-btn">Siguiente</button>
+        <button class="waves-effect waves-light btn next-home-btn" id="next-home-btn">Siguiente</button>
       </div>
     </div>
   </div>
