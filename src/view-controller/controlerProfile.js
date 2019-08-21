@@ -1,4 +1,6 @@
 import { databaseRegister} from '../firestore.js'
+import { changeHash} from './route.js'
+
 const drawDataURIOnCanvas=(strDataURI, context)=> {
     "use strict";
     var img = new window.Image();
@@ -31,8 +33,9 @@ export const submitFirebase = () => {
             CreatedAt: firebase.firestore.FieldValue.serverTimestamp(),
             photo: toDrawUrl
         }
-        console.log(obj);
+        
         databaseRegister(obj);
+        changeHash('#/home')
     }) 
 
 }
