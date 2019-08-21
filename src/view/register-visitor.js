@@ -81,7 +81,7 @@ export default () => {
 
   const nextHomeBtn = createChildNode.querySelector('#next-home-btn');
   nextHomeBtn.addEventListener('click', () => {
-    // register()
+    register()
     changeHash('#/photo')
   })
   

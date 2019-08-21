@@ -78,6 +78,7 @@ export const changeView = (route) => {
       // })
 
       autocompleteHost();
+      
       break;
     }
     case '#/photo': {

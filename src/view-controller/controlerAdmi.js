@@ -12,7 +12,6 @@ export const readRegister = (query) => {
     if (containerRegister) {
         containerRegister.innerHTML = '';
         query.forEach((doc) => {
-            console.log(doc.data().fechaInicial);
             containerRegister.innerHTML +=
                 `<table class='table tableWidth'>
                     <tbody>
@@ -34,11 +33,8 @@ export const readRegister = (query) => {
             </table>`
 
             document.querySelectorAll('.status').forEach(input => input.addEventListener('click', (e) => {
-                console.log(e.target.checked)
                 if (e.target.checked == true) {
-                    console.log('pasastes por aquí')
                     editObj('estado', 'on', e.target.dataset.id)
-                    console.log(e.target.checked)
                     editObj('fechaSalida', '', e.target.dataset.id)
 
                 }
