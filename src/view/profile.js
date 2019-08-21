@@ -1,3 +1,5 @@
+import { changeHash } from "../view-controller/route.js";
+
 export default () => {
     const createChildNode = document.createElement('div')
     createChildNode.setAttribute('id', 'containerProfile' )
@@ -6,5 +8,9 @@ export default () => {
     <button id='register' type='button'>Aceptar</button>
     `;
     createChildNode.innerHTML=content;
+    const registrar = createChildNode.querySelector('#register');
+    registrar.addEventListener('click', ()=>{
+        changeHash('#/home');
+    })
     return createChildNode;
 }

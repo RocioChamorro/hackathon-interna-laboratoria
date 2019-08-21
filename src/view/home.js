@@ -20,7 +20,7 @@ export default () => {
   })
   const administrador = createChildNode.querySelector('#administrador');
   administrador.addEventListener('click', () => {
-    changeHash("#/admin");
+    changeHash('#/loginAdmin');
   })
 
 

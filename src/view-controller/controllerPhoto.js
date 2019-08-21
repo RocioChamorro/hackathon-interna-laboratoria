@@ -33,7 +33,6 @@ export const capturePhoto = () => {
         player.style.display = "none";
         captureButton.style.display = "none";
         document.getElementById('nextbtn').addEventListener('click', () => {
-            console.log('pasó')
             changeHash("#/profile")
         })
     });

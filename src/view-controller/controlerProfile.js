@@ -19,9 +19,7 @@ export const getsessionStorage=()=>{
 
 export const submitFirebase = () => {
     const objInf= JSON.parse(sessionStorage.getItem('objInf'));
-    console.log(objInf);
     const toDrawUrl = sessionStorage.getItem('url');
-    console.log(toDrawUrl)
     const submit= document.getElementById('register');
     submit.addEventListener('click', () => {
         const obj = {
@@ -30,10 +28,10 @@ export const submitFirebase = () => {
             Documento: objInf.Document,
             Company: objInf.Company,
             Host: objInf.Host,
-            CreatedAt: objInf.createdAt,
+            CreatedAt: firebase.firestore.FieldValue.serverTimestamp(),
             photo: toDrawUrl
         }
-        console.log(obj)
+        console.log(obj);
         databaseRegister(obj);
     }) 
 
