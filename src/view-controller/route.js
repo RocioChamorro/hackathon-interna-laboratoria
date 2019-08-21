@@ -29,21 +29,43 @@ export const changeView = (route) => {
   switch (route) {
     case '#/home':  main.appendChild(components.home())
       break;
-    case '#/register': {console.log(main.appendChild(components.register()));
+    case '#/register': {main.appendChild(components.register());
       const autocompleteHost = () => {
-        console.log('register')
         const options = {
           data: {
-            'Gonzalo': null,
-            'Alejandra Ramirez': null,
-            'Vania': null,
-            'Rocio': null
+            'Gonzalo Garcia - Laboratoria': null,
+            'Alejandra Rodriguez - Artes Escénicas': null,
+            'Rocio Chamorro - Comunal': null
           },
           minLength: 4
         }
         const elems = document.querySelectorAll('.autocomplete');
         const instances = M.Autocomplete.init(elems, options);
       };
+
+      // const dataVisitors = {
+      //   Nombre : 'Franciree Arellan',
+      //   Email : 'arellan@gmail.com',
+      //   TipoDocumento: 'ptp',
+      //   Documento: '123'
+      // }
+      // const name = document.getElementById('name')
+      // const email = document.getElementById('email')
+      // const identification = document.getElementById('identification')
+      // const identityNumber = document.getElementById('identity')
+    
+      // const changeValueDocument = document.querySelector('#identity');
+      // changeValueDocument.addEventListener('change', (event) => {
+      //   event.preventDefault()
+      //   if(dataVisitors.Documento === changeValueDocument.value) {
+      //     name.innerHTML = dataVisitors.Nombre;
+      //     email.innerHTML = dataVisitors.Email;
+      //     // identification.innerHTML = dataVisitors.TipoDocumento;
+      //     identityNumber.innerHTML = dataVisitors.Documento;
+      //   }
+      //   console.log(changeValueDocument.value)
+      //   console.log('database', dataVisitors.Documento)
+      // })
 
       autocompleteHost();
       break;
