@@ -21,16 +21,27 @@ export const getsessionStorage=()=>{
 
 export const submitFirebase = () => {
     const objInf= JSON.parse(sessionStorage.getItem('objInf'));
-    const toDrawUrl = sessionStorage.getItem('url');
+    const url = sessionStorage.getItem('url');
     const submit= document.getElementById('register');
-    submit.addEventListener('click', () => {
+   /*  var item_image = url.replace(/^data:image\/(png|jpeg);base64,/, ""); */ //transformar una imagen a base 64 para subir al sessionStorage
 
+    let bannerImg = new Image();
+    bannerImg.setAttribute('id','tableBanner')
+    bannerImg.src="data:image/png;base64," + `${item_image}`;
+    console.log(bannerImg)
+    /* const bannerImg = document.createElement('img')
+    bannerImg.setAttribute('id','tableBanner')
+    bannerImg.src="data:image/png;base64," + `${toDrawUrl}`;
+    console.log(bannerImg) */
+   
+    submit.addEventListener('click', () => {
+       
         const fecha = new Date();
 
         const options = {
            year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric'
        };
-
+     
         const obj = {
             Nombre: objInf.Nombre,
             Email: objInf.Email,
@@ -38,7 +49,7 @@ export const submitFirebase = () => {
             Company: objInf.Company,
             Host: objInf.Host,
             CreatedAt: firebase.firestore.FieldValue.serverTimestamp(),
-            photo: '',
+            photo: url,
             estado: 'on',
             fechaInicial: `${fecha.toLocaleDateString("es-ES", options)}`,
             fechaSalida: ''

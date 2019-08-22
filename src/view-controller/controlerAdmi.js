@@ -16,7 +16,7 @@ export const readRegister = (query) => {
                 `<table class="centered">
                     <tbody>
                         <tr>
-                            
+                            <td id='order-${doc.id}'><img src=${doc.data().photo}></td>
                             <td id='order-${doc.id}'>${doc.data().Nombre}</td>
                             <td id='order-${doc.id}'>${doc.data().fechaInicial}<br>${doc.data().fechaSalida !='' ? doc.data().fechaSalida : ''}</td>
                             <td>

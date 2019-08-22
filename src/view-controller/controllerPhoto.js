@@ -23,7 +23,13 @@ export const capturePhoto = () => {
         // Stop all video streams.
         videoTracks.forEach(function (track) { track.stop() });
         /*   */
-        var url = snapshotCanvas.toDataURL("image/jpeg");
+        var url = snapshotCanvas.toDataURL();
+       
+
+        
+
+
+
         sessionStorage.setItem('url', url);
         const btn = document.createElement('button')
         btn.setAttribute('id', 'nextbtn')
